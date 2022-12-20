@@ -74,4 +74,19 @@ public class MarsRoverTest {
         // then
         assertEquals("N", marsRover.getDirection());
     }
+
+    @Test
+    void shouldMoveOneStepWhenActionIsM() {
+        // given
+        MarsRover marsRover = MarsRoverBuilder.build("0,0,N");
+        String action = "M";
+
+        // when
+        marsRover.execute(action);
+
+        // then
+        assertEquals(0, marsRover.getX());
+        assertEquals(1, marsRover.getY());
+        assertEquals("N", marsRover.getDirection());
+    }
 }

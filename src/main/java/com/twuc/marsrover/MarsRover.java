@@ -31,6 +31,26 @@ public class MarsRover {
             case "R":
                 turnRight();
                 break;
+            case "M":
+                move();
+                break;
+        }
+    }
+
+    private void move() {
+        switch (direction) {
+            case "N":
+                this.y += 1;
+                break;
+            case "W":
+                this.x -= 1;
+                break;
+            case "S":
+                this.y -= 1;
+                break;
+            case "E":
+                this.x += 1;
+                break;
         }
     }
 
