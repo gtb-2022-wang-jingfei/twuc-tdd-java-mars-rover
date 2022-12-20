@@ -13,7 +13,7 @@ public class MarsRoverTest {
         String input = "5,6";
 
         // when
-        Mars mars = MarsBuilder.build(input);
+        Mars mars = MarsRoverFactory.buildMars(input);
 
         // then
         assertNotNull(mars);
@@ -27,7 +27,7 @@ public class MarsRoverTest {
         String input = "1,2,N";
 
         // when
-        MarsRover marsRover = MarsRoverBuilder.build(input);
+        MarsRover marsRover = MarsRoverFactory.buildMarsRover(input);
 
         // then
         assertNotNull(marsRover);
@@ -39,7 +39,7 @@ public class MarsRoverTest {
     @Test
     void shouldTurnLeftWhenActionIsL() {
         // given
-        MarsRover marsRover = MarsRoverBuilder.build("0,0,N");
+        MarsRover marsRover = MarsRoverFactory.buildMarsRover("0,0,N");
         String action = "L";
 
         // when
@@ -52,7 +52,7 @@ public class MarsRoverTest {
     @Test
     void shouldTurnRightWhenActionIsRAndInitDirectionIsN() {
         // given
-        MarsRover marsRover = MarsRoverBuilder.build("0,0,N");
+        MarsRover marsRover = MarsRoverFactory.buildMarsRover("0,0,N");
         String action = "R";
 
         // when
@@ -65,7 +65,7 @@ public class MarsRoverTest {
     @Test
     void shouldTurnRightWhenActionIsRAndInitDirectionIsW() {
         // given
-        MarsRover marsRover = MarsRoverBuilder.build("0,0,W");
+        MarsRover marsRover = MarsRoverFactory.buildMarsRover("0,0,W");
         String action = "R";
 
         // when
@@ -78,7 +78,7 @@ public class MarsRoverTest {
     @Test
     void shouldMoveOneStepWhenActionIsM() {
         // given
-        MarsRover marsRover = MarsRoverBuilder.build("0,0,N");
+        MarsRover marsRover = MarsRoverFactory.buildMarsRover("0,0,N");
         String action = "M";
 
         // when
@@ -93,8 +93,8 @@ public class MarsRoverTest {
     @Test
     void shouldExecuteActionsWhenInputIsRML() {
         // given
-        Mars mars = MarsBuilder.build("5,5");
-        MarsRover marsRover = MarsRoverBuilder.build("0,0,N");
+        Mars mars = MarsRoverFactory.buildMars("5,5");
+        MarsRover marsRover = MarsRoverFactory.buildMarsRover("0,0,N");
         String input = "RML";
 
         // when
@@ -109,8 +109,8 @@ public class MarsRoverTest {
     @Test
     void shouldExecuteActionsWhenInputIsLMLMLMLMM() {
         // given
-        Mars mars = MarsBuilder.build("5,5");
-        MarsRover marsRover = MarsRoverBuilder.build("1,2,N");
+        Mars mars = MarsRoverFactory.buildMars("5,5");
+        MarsRover marsRover = MarsRoverFactory.buildMarsRover("1,2,N");
         String input = "LMLMLMLMM";
 
         // when
