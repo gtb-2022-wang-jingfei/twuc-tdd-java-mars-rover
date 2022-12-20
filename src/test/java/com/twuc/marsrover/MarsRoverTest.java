@@ -105,4 +105,20 @@ public class MarsRoverTest {
         assertEquals(0, marsRover.getY());
         assertEquals("N", marsRover.getDirection());
     }
+
+    @Test
+    void shouldExecuteActionsWhenInputIsLMLMLMLMM() {
+        // given
+        Mars mars = MarsBuilder.build("5,5");
+        MarsRover marsRover = MarsRoverBuilder.build("1,2,N");
+        String input = "LMLMLMLMM";
+
+        // when
+        marsRover.execute(input);
+
+        // then
+        assertEquals(1, marsRover.getX());
+        assertEquals(3, marsRover.getY());
+        assertEquals("N", marsRover.getDirection());
+    }
 }
