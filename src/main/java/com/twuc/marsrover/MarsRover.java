@@ -22,4 +22,49 @@ public class MarsRover {
     public String getDirection() {
         return direction;
     }
+
+    public void execute(String action) {
+        switch (action) {
+            case "L":
+                turnLeft();
+                break;
+            case "R":
+                turnRight();
+                break;
+        }
+    }
+
+    private void turnLeft() {
+        switch (direction) {
+            case "N":
+                this.direction = "W";
+                break;
+            case "W":
+                this.direction = "S";
+                break;
+            case "S":
+                this.direction = "E";
+                break;
+            case "E":
+                this.direction = "N";
+                break;
+        }
+    }
+
+    private void turnRight() {
+        switch (direction) {
+            case "N":
+                this.direction = "E";
+                break;
+            case "E":
+                this.direction = "S";
+                break;
+            case "S":
+                this.direction = "W";
+                break;
+            case "W":
+                this.direction = "N";
+                break;
+        }
+    }
 }

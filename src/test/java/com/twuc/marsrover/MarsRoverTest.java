@@ -35,4 +35,43 @@ public class MarsRoverTest {
         assertEquals(2, marsRover.getY());
         assertEquals("N", marsRover.getDirection());
     }
+
+    @Test
+    void shouldTurnLeftWhenActionIsL() {
+        // given
+        MarsRover marsRover = MarsRoverBuilder.build("0,0,N");
+        String action = "L";
+
+        // when
+        marsRover.execute(action);
+
+        // then
+        assertEquals("W", marsRover.getDirection());
+    }
+
+    @Test
+    void shouldTurnRightWhenActionIsRAndInitDirectionIsN() {
+        // given
+        MarsRover marsRover = MarsRoverBuilder.build("0,0,N");
+        String action = "R";
+
+        // when
+        marsRover.execute(action);
+
+        // then
+        assertEquals("E", marsRover.getDirection());
+    }
+
+    @Test
+    void shouldTurnRightWhenActionIsRAndInitDirectionIsW() {
+        // given
+        MarsRover marsRover = MarsRoverBuilder.build("0,0,W");
+        String action = "R";
+
+        // when
+        marsRover.execute(action);
+
+        // then
+        assertEquals("N", marsRover.getDirection());
+    }
 }
