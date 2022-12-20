@@ -1,19 +1,19 @@
 package com.twuc.marsrover;
 
 public class Mars {
-    private int x;
-    private int y;
+    private final int width;
+    private final int height;
 
-    public Mars(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Mars(int width, int height) {
+        this.width = width;
+        this.height = height;
     }
 
     public int getWidth() {
-        return x;
+        return width;
     }
 
     public int getHeight() {
-        return y;
+        return height;
     }
 }
