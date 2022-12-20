@@ -1,5 +1,8 @@
 package com.twuc.marsrover;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MarsRover {
     private int x;
     private int y;
@@ -60,37 +63,21 @@ public class MarsRover {
         }
     }
 
+    private List<String> directions = Arrays.asList("N", "E", "S", "W");
+
     private void turnLeft() {
-        switch (direction) {
-            case "N":
-                this.direction = "W";
-                break;
-            case "W":
-                this.direction = "S";
-                break;
-            case "S":
-                this.direction = "E";
-                break;
-            case "E":
-                this.direction = "N";
-                break;
+        int i = directions.indexOf(this.direction);
+        if (i - 1 < 0) {
+            i += directions.size();
         }
+        this.direction = directions.get(i - 1);
     }
 
     private void turnRight() {
-        switch (direction) {
-            case "N":
-                this.direction = "E";
-                break;
-            case "E":
-                this.direction = "S";
-                break;
-            case "S":
-                this.direction = "W";
-                break;
-            case "W":
-                this.direction = "N";
-                break;
+        int i = directions.indexOf(this.direction);
+        if (i + 1 >= directions.size()) {
+            i -= directions.size();
         }
+        this.direction = directions.get(i + 1);
     }
 }
