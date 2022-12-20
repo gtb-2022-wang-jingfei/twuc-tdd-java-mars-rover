@@ -1,7 +1,9 @@
 package com.twuc.marsrover;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class MarsRoverTest {
 
@@ -14,8 +16,23 @@ public class MarsRoverTest {
         Mars mars = MarsBuilder.build(input);
 
         // then
-        Assertions.assertNotNull(mars);
-        Assertions.assertEquals(5, mars.getWidth());
-        Assertions.assertEquals(6, mars.getHeight());
+        assertNotNull(mars);
+        assertEquals(5, mars.getWidth());
+        assertEquals(6, mars.getHeight());
+    }
+
+    @Test
+    void shouldCreateMarsRoverWhenInputIs12N() {
+        // given
+        String input = "1,2,N";
+
+        // when
+        MarsRover marsRover = MarsRoverBuilder.build(input);
+
+        // then
+        assertNotNull(marsRover);
+        assertEquals(1, marsRover.getX());
+        assertEquals(2, marsRover.getY());
+        assertEquals("N", marsRover.getDirection());
     }
 }
