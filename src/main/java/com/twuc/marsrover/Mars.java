@@ -1,8 +1,8 @@
 package com.twuc.marsrover;
 
 public class Mars {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     public int getX() {
         return x;
