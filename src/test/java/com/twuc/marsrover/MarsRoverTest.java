@@ -33,4 +33,70 @@ public class MarsRoverTest {
         Assertions.assertEquals("N", marsRover.getDirection());
     }
 
+    @Test
+    void shouldTurnLeftWhenActionIsLAndInitDirectionIsN() {
+        // given
+        MarsRover marsRover = MarsRoverBuilder.build("0,0,N");
+        String action = "L";
+
+        // when
+        marsRover.execute(action);
+
+        // then
+        Assertions.assertEquals("W", marsRover.getDirection());
+    }
+
+    @Test
+    void shouldTurnLeftWhenActionIsLAndInitDirectionIsW() {
+        // given
+        MarsRover marsRover = MarsRoverBuilder.build("0,0,W");
+        String action = "L";
+
+        // when
+        marsRover.execute(action);
+
+        // then
+        Assertions.assertEquals("S", marsRover.getDirection());
+    }
+
+    @Test
+    void shouldTurnRightWhenActionIsRAndInitDirectionIsN() {
+        // given
+        MarsRover marsRover = MarsRoverBuilder.build("0,0,N");
+        String action = "R";
+
+        // when
+        marsRover.execute(action);
+
+        // then
+        Assertions.assertEquals("E", marsRover.getDirection());
+    }
+
+    @Test
+    void shouldTurnRightWhenActionIsRAndInitDirectionIsW() {
+        // given
+        MarsRover marsRover = MarsRoverBuilder.build("0,0,W");
+        String action = "R";
+
+        // when
+        marsRover.execute(action);
+
+        // then
+        Assertions.assertEquals("N", marsRover.getDirection());
+    }
+
+    @Test
+    void shouldMoveOneStepWhenActionIsM() {
+        // given
+        MarsRover marsRover = MarsRoverBuilder.build("0,0,N");
+        String action = "M";
+
+        // when
+        marsRover.execute(action);
+
+        // then
+        Assertions.assertEquals(0, marsRover.getX());
+        Assertions.assertEquals(1, marsRover.getY());
+        Assertions.assertEquals("N", marsRover.getDirection());
+    }
 }

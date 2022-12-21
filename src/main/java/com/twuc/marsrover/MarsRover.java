@@ -23,4 +23,69 @@ public class MarsRover {
         this.y = y;
         this.direction = direction;
     }
+
+    public void execute(String action) {
+        switch (action) {
+            case "L":
+                turnLeft();
+                break;
+            case "R":
+                turnRight();
+                break;
+            case "M":
+                move();
+                break;
+        }
+    }
+
+    private void move() {
+        switch (this.direction) {
+            case "N":
+                this.y += 1;
+                break;
+            case "E":
+                this.x += 1;
+                break;
+            case "S":
+                this.y -= 1;
+                break;
+            case "W":
+                this.x -= 1;
+                break;
+        }
+    }
+
+    private void turnRight() {
+        switch (this.direction) {
+            case "N":
+                this.direction = "E";
+                break;
+            case "E":
+                this.direction = "S";
+                break;
+            case "S":
+                this.direction = "W";
+                break;
+            case "W":
+                this.direction = "N";
+                break;
+        }
+    }
+
+    private void turnLeft() {
+        switch (this.direction) {
+            case "N":
+                this.direction = "W";
+                break;
+            case "W":
+                this.direction = "S";
+                break;
+            case "S":
+                this.direction = "E";
+                break;
+            case "E":
+                this.direction = "N";
+                break;
+        }
+    }
 }
