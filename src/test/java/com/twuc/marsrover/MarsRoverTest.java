@@ -30,7 +30,7 @@ public class MarsRoverTest {
         Assertions.assertNotNull(marsRover);
         Assertions.assertEquals(0, marsRover.getX());
         Assertions.assertEquals(1, marsRover.getY());
-        Assertions.assertEquals("N", marsRover.getDirection());
+        Assertions.assertEquals(Direction.N, marsRover.getDirection());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class MarsRoverTest {
         marsRover.execute(action);
 
         // then
-        Assertions.assertEquals("W", marsRover.getDirection());
+        Assertions.assertEquals(Direction.W, marsRover.getDirection());
     }
 
     @Test
@@ -56,7 +56,7 @@ public class MarsRoverTest {
         marsRover.execute(action);
 
         // then
-        Assertions.assertEquals("S", marsRover.getDirection());
+        Assertions.assertEquals(Direction.S, marsRover.getDirection());
     }
 
     @Test
@@ -69,7 +69,7 @@ public class MarsRoverTest {
         marsRover.execute(action);
 
         // then
-        Assertions.assertEquals("E", marsRover.getDirection());
+        Assertions.assertEquals(Direction.E, marsRover.getDirection());
     }
 
     @Test
@@ -82,7 +82,7 @@ public class MarsRoverTest {
         marsRover.execute(action);
 
         // then
-        Assertions.assertEquals("N", marsRover.getDirection());
+        Assertions.assertEquals(Direction.N, marsRover.getDirection());
     }
 
     @Test
@@ -97,7 +97,7 @@ public class MarsRoverTest {
         // then
         Assertions.assertEquals(0, marsRover.getX());
         Assertions.assertEquals(1, marsRover.getY());
-        Assertions.assertEquals("N", marsRover.getDirection());
+        Assertions.assertEquals(Direction.N, marsRover.getDirection());
     }
 
     @Test
@@ -112,7 +112,7 @@ public class MarsRoverTest {
         // then
         Assertions.assertEquals(1, marsRover.getX());
         Assertions.assertEquals(0, marsRover.getY());
-        Assertions.assertEquals("N", marsRover.getDirection());
+        Assertions.assertEquals(Direction.N, marsRover.getDirection());
     }
 
     @Test

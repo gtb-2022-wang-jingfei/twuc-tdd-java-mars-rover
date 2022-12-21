@@ -1,12 +1,9 @@
 package com.twuc.marsrover;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class MarsRover {
     private int x;
     private int y;
-    private String direction;
+    private Direction direction;
 
     public int getX() {
         return x;
@@ -16,7 +13,7 @@ public class MarsRover {
         return y;
     }
 
-    public String getDirection() {
+    public Direction getDirection() {
         return direction;
     }
 
@@ -24,7 +21,7 @@ public class MarsRover {
 
         this.x = x;
         this.y = y;
-        this.direction = direction;
+        this.direction = Direction.valueOf(direction);
     }
 
     public void execute(String actions) {
@@ -36,10 +33,10 @@ public class MarsRover {
     private void executeOneAction(String action) {
         switch (action) {
             case "L":
-                turnLeft();
+                this.direction = this.direction.turnLeft();
                 break;
             case "R":
-                turnRight();
+                this.direction = this.direction.turnRight();
                 break;
             case "M":
                 move();
@@ -48,7 +45,7 @@ public class MarsRover {
     }
 
     private void move() {
-        switch (this.direction) {
+        switch (this.direction.name()) {
             case "N":
                 this.y += 1;
                 break;
@@ -62,20 +59,6 @@ public class MarsRover {
                 this.x -= 1;
                 break;
         }
-    }
-
-    private final List<String> directions = Arrays.asList("N", "E", "S", "W");
-
-    private void turnRight() {
-        int currentIndex = directions.indexOf(this.direction);
-        int index = (currentIndex + 1) % directions.size();
-        this.direction = directions.get(index);
-    }
-
-    private void turnLeft() {
-        int currentIndex = directions.indexOf(this.direction);
-        int index = (currentIndex - 1 + directions.size()) % directions.size();
-        this.direction = directions.get(index);
     }
 
     public String location() {
