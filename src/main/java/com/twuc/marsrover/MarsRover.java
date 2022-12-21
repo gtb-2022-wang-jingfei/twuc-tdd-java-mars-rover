@@ -24,7 +24,13 @@ public class MarsRover {
         this.direction = direction;
     }
 
-    public void execute(String action) {
+    public void execute(String actions) {
+        for (char action : actions.toCharArray()) {
+            executeOneAction(String.valueOf(action));
+        }
+    }
+
+    private void executeOneAction(String action) {
         switch (action) {
             case "L":
                 turnLeft();

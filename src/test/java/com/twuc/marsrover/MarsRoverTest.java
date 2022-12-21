@@ -99,4 +99,19 @@ public class MarsRoverTest {
         Assertions.assertEquals(1, marsRover.getY());
         Assertions.assertEquals("N", marsRover.getDirection());
     }
+
+    @Test
+    void shouldExecuteActionsWhenActionsAreRML() {
+        // given
+        MarsRover marsRover = MarsRoverBuilder.build("0,0,N");
+        String actions = "RML";
+
+        // when
+        marsRover.execute(actions);
+
+        // then
+        Assertions.assertEquals(1, marsRover.getX());
+        Assertions.assertEquals(0, marsRover.getY());
+        Assertions.assertEquals("N", marsRover.getDirection());
+    }
 }
