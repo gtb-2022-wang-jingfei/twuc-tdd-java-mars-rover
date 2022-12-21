@@ -94,4 +94,8 @@ public class MarsRover {
                 break;
         }
     }
+
+    public String location() {
+        return this.x + "," + this.y + "," + this.direction;
+    }
 }
